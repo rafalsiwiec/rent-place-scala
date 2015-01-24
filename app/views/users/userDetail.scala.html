@@ -1,0 +1,35 @@
+@(user: User, activateForm: Form[String])
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <div> USER: @user </div>
+    <br>
+    @if(user.activated) {
+        Thanks for activation :)
+    } else {
+        <a href="@routes.UserController.generateActivationSecret(user.id)">Generate activation code</a>
+        <br>
+        <div>
+            @helper.form(action = routes.UserController.activateUser(user.id)) {
+                <input type="hidden" name="id" value="@user.id" />
+                @helper.inputText(activateForm("secret"))
+                <button>Activate</button>
+            }
+        </div>
+    }
+    <br>
+    @if(!user.confirmed) {
+        Please confirm your account
+    }
+
+    <br><br>
+    <a href="@routes.UserController.listUsers">back</a>
+</html>
+
+
+
+

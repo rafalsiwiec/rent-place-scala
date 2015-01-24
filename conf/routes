@@ -1,0 +1,11 @@
+
+GET     /users/list     controllers.UserController.listUsers
+GET     /users/addUser  controllers.UserController.addUser
+GET     /users/submit   controllers.UserController.addUserSubmit
+GET     /users/delete   controllers.UserController.deleteUser(id: Long)
+
+GET     /users/genActivate  controllers.UserController.generateActivationSecret(id: Long)
+GET     /users/activate     controllers.UserController.activateUser(id: Long)
+GET     /users/confirm      controllers.UserController.confirmUser(id: Long)
+
+GET     /users/:id      controllers.UserController.userDetails(id: Long)
