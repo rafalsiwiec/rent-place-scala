@@ -4,6 +4,7 @@ Example Play scala application
 
 ## Running
 > sbt run
+
 Then go to browser "http://localhost:9000" and apply evolution to create schema.
 
 ## Modules
