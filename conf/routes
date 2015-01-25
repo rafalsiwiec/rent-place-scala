@@ -9,3 +9,16 @@ GET     /users/activate     controllers.UserController.activateUser(id: Long)
 GET     /users/confirm      controllers.UserController.confirmUser(id: Long)
 
 GET     /users/:id      controllers.UserController.userDetails(id: Long)
+
+
+GET     /flats          controllers.FlatController.index
+GET     /flats/list     controllers.FlatController.list
+
+GET     /flats/:flatId  controllers.FlatController.details(flatId: Long)
+PUT     /flats/:flatId  controllers.FlatController.save(flatId: Long)
+
+GET     /rents/list         controllers.RentController.list
+POST    /rents/             controllers.RentController.insert
+GET     /rents/delete/:id   controllers.RentController.delete(id: Long)
+
+GET     /assets/*file   controllers.Assets.at(path="/public", file)

@@ -13,6 +13,7 @@ libraryDependencies ++= Seq(
   "org.xerial" % "sqlite-jdbc" % "3.8.7",
   "com.typesafe.play" % "anorm_2.11" % "2.4.0-M2",
   "org.squeryl" % "squeryl_2.11" % "0.9.5-7",
+  "com.typesafe.play" %% "play-slick" % "0.8.1",
   jdbc
 )
 

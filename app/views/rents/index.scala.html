@@ -1,0 +1,43 @@
+@(rents: Seq[Rent], rentForm: Form[Rent])
+
+@import helper.twitterBootstrap._
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rents</title>
+        <script src="@routes.Assets.at("javascripts/jquery-1.11.2.min.js")" type="text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel='stylesheet' type='text/css' href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>object</th>
+                <th>Delete</th>
+            </tr>
+            @rents.map { rent =>
+            <tr>
+                <td>@rent</td>
+                <td><a href="@routes.RentController.delete(rent.id)">X</a>
+            </tr>
+            }
+        </table>
+        <hr>
+        <div class="panel panel-default">
+        <div class="panel-body">
+        @helper.form(action = routes.RentController.insert, 'method -> "POST") {
+            @helper.inputText(rentForm("id"))
+            @helper.inputText(rentForm("userId"))
+            @helper.inputText(rentForm("flatId"))
+            @helper.inputDate(rentForm("from"))
+            @helper.inputDate(rentForm("till"))
+            @helper.checkbox(rentForm("confirmed"))
+            <button>Add!</button>
+        }
+        </div>
+        </div>
+    </body>
+</html>
+

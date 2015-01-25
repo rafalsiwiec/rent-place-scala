@@ -24,3 +24,18 @@ Queries used are SELECT / UPDATE / DELETE.
 Also shows how to map Form parameters into standard tuple or complex Object.
 How to create Form with helper utils and display failed alidation.
 
+### Flat Management module
+Available under address "http://localhost:9000/flats"
+Single html page fetching data by JSON calls to REST service.
+
+Fields are editable and after any change a data is persisted on server.
+Changing Id shows how failure is handled.
+
+Two approaches to parsing JSON used.
+
+### Rent Management module
+Available under address "http://localhost:9000/rents/list"
+ORM used is Slick. Simple presentation of CRUD operations on data.
+Database schema automatically generated but manually merged with the one from Anorm.
+Form in view contains data picker and a checkbox.
+Bootstrap theme integrated.
