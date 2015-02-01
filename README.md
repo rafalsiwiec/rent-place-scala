@@ -39,3 +39,12 @@ ORM used is Slick. Simple presentation of CRUD operations on data.
 Database schema automatically generated but manually merged with the one from Anorm.
 Form in view contains data picker and a checkbox.
 Bootstrap theme integrated.
+
+### Chat module
+Visit links in 2 windows:
+"http://localhost:9000/room/tomek"
+"http://localhost:9000/room/jacek"
+Make interesting conversation :)
+WebSockets with Iteratee concept used to handle chat interaction.
+Single Actor from Akka to handle chat state.
+

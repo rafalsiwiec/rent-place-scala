@@ -21,4 +21,8 @@ GET     /rents/list         controllers.RentController.list
 POST    /rents/             controllers.RentController.insert
 GET     /rents/delete/:id   controllers.RentController.delete(id: Long)
 
+GET /room/:nick             controllers.Chat.showRoom(nick)
+GET /room/socket/:nick      controllers.Chat.chatSocket(nick)
+
 GET     /assets/*file   controllers.Assets.at(path="/public", file)
+GET     /webjars/*file  controllers.WebJarAssets.at(file)
